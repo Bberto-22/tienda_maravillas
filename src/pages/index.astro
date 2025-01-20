@@ -1,0 +1,28 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body class="index-page">
+		<Header />
+		<main>
+			<h1 style="display: flex; align-items: center; gap: 10px;">
+				<img src="/images/logo_granate_sin_borde.png" alt="Logo Casa Maravillas" width="150" height="150" />
+				Tu tienda<br> 
+				Casa Maravillas
+			</h1>
+			<p>
+				Bienvenidos a la tienda de tus sueños, vendemos perro.
+			</p>
+			<img src="/images/entrada_perro.jpeg" alt="Logo Casa Maravillas" width="" height="" />
+		</main>
+		<Footer />
+	</body>
+</html>
