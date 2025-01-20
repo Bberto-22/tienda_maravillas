@@ -47,7 +47,8 @@ body.index-page {
     background-color: #fcf6e7;  /* Gris claro */
 }
 main {
-	width: 720px;
+	width: 90%;
+	width: 1000px;
 	max-width: calc(100% - 2em);
 	margin: auto;
 	padding: 3em 1em;
@@ -159,4 +160,54 @@ hr {
 	clip-path: inset(50%);
 	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
+}
+
+/* Estilos de prueba */
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; /* Espacio entre elementos */
+}
+
+/* Imagen de ancho completo */
+.full-width-image {
+    width: 100%;  /* Ocupa todo el ancho de main (1000px) */
+    max-width: 1000px;
+    height: auto;
+    display: block;
+}
+
+/* Contenedor para la imagen y el texto sobrepuesto */
+.image-text-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+}
+
+/* Contenedores para las imágenes alineadas a izquierda/derecha */
+.image-text-container.right-align {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+}
+
+.image-text-container.left-align {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Tamaño de imágenes alineadas */
+.right-image,
+.left-image {
+    max-width: 350px;
+    height: auto;
+}
+
+/* Espaciado para evitar imágenes pegadas entre sí */
+.image-spacing {
+    margin-bottom: 120px;
 }

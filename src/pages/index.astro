@@ -13,15 +13,26 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body class="index-page">
 		<Header />
 		<main>
-			<h1 style="display: flex; align-items: center; gap: 10px;">
-				<img src="/images/logo_granate_sin_borde.png" alt="Logo Casa Maravillas" width="150" height="150" />
-				Tu tienda<br> 
-				Casa Maravillas
-			</h1>
-			<p>
-				Bienvenidos a la tienda de tus sueños, vendemos perro.
-			</p>
-			<img src="/images/entrada_perro.jpeg" alt="Logo Casa Maravillas" width="" height="" />
+			<div class="image-container">
+				<img src="/images/logo_granate_sin_borde.png" alt="Logo Casa Maravillas" class="full-width-image" />
+				
+				<div class="image-text-container image-spacing">
+					<p>
+						Bienvenidos a la tienda de tus sueños, vendemos perro.
+					</p>
+					<img src="/images/entrada_perro.jpeg" alt="Entrada Casa Maravillas" class="full-width-image" />
+				</div>
+		
+				<div class="image-text-container right-align image-spacing">
+					<p>Tenemos cosas chinas, Mama mia</p>
+					<img class="right-image" src="/cosas_chinas.jpeg" alt="Cosas chinas" />
+				</div>
+				
+				<div class="image-text-container left-align image-spacing">
+					<img class="left-image" src="/aquilino.jpeg" alt="Aquilino" />
+					<p>También tenemos un chico muy atractivo, pero no está a la venta</p>
+				</div>
+			</div>
 		</main>
 		<Footer />
 	</body>
