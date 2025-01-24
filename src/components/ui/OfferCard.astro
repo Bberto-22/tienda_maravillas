@@ -1,0 +1,70 @@
+---
+interface Props {
+    image: string;
+    title: string;
+    description: string;
+}
+
+const { image, title, description } = Astro.props;
+---
+
+<div class="offer-card">
+    <img src={image} alt={title} class="offer-image" />
+    <div class="offer-details">
+        <h3 class="offer-title">{title}</h3>
+        <p class="offer-description">{description}</p>
+    </div>
+</div>
+
+<style>
+    .offer-card {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .offer-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .offer-image {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .offer-details {
+        flex: 1;
+    }
+
+    .offer-title {
+        margin: 0;
+        font-size: 1.5em;
+        color: #800020; /* Granate */
+    }
+
+    .offer-description {
+        margin: 0;
+        font-size: 1em;
+        color: #666;
+    }
+
+    @media (max-width: 768px) {
+        .offer-card {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .offer-image {
+            width: 100%;
+            height: auto;
+        }
+    }
+</style>

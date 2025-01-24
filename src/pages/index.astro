@@ -1,39 +1,70 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import OfferCard from '../components/ui/OfferCard.astro';
+
+const offers = [
+	{
+		image: '/images/producto1.jpeg',
+		title: 'Colonia bustamante',
+		description: '30% de descuento en colonia bustamante de alta calidad',
+	},
+	{
+		image: '/images/producto1.jpeg',
+		title: 'Colonia bustamante',
+		description: '30% de descuento en colonia bustamante de alta calidad',
+	},
+	{
+		image: '/images/producto1.jpeg',
+		title: 'Colonia bustamante',
+		description: '30% de descuento en colonia bustamante de alta calidad',
+	},
+	{
+		image: '/images/producto1.jpeg',
+		title: 'Colonia bustamante',
+		description: '30% de descuento en colonia bustamante de alta calidad',
+	},
+	{
+		image: '/images/producto1.jpeg',
+		title: 'Colonia bustamante',
+		description: '30% de descuento en colonia bustamante de alta calidad',
+	}
+];
+
+import BaseLayout from '../layouts/BaseLayout.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body class="index-page">
-		<Header />
-		<main>
-			<div class="image-container">
-				<img src="/images/logo_granate_sin_borde.png" alt="Logo Casa Maravillas" class="full-width-image" />
-				
-				<div class="image-text-container image-spacing">
-					<p>
-						Bienvenidos a la tienda de tus sueños, vendemos perro.
-					</p>
-					<img src="/images/entrada_perro.jpeg" alt="Entrada Casa Maravillas" class="full-width-image" />
-				</div>
+<BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+	<div class="image-container">
+		<img src="/images/logo_granate_sin_borde.png" alt="Logo Casa Maravillas" class="full-width-image" />
+		<div class="offer-list">
+			<h1 class="center">Las ofertas de la semana</h1>
+			{offers.map((offer) => (
+			<OfferCard image={offer.image} title={offer.title} description={offer.description} />
+			))}
+		</div>
+		<div class="image-text-container image-spacing">
+			<p>
+				Bienvenidos a la tienda de tus sueños, vendemos perro.
+			</p>
+			<img src="/images/entrada_perro.jpeg" alt="Entrada Casa Maravillas" class="full-width-image" />
+		</div>
+
+		<div class="image-text-container right-align image-spacing">
+			<p>Tenemos cosas chinas, Mama mia</p>
+			<img class="right-image shadow-bottom" src="/cosas_chinas.jpeg" alt="Cosas chinas" />
+		</div>
 		
-				<div class="image-text-container right-align image-spacing">
-					<p>Tenemos cosas chinas, Mama mia</p>
-					<img class="right-image" src="/cosas_chinas.jpeg" alt="Cosas chinas" />
-				</div>
-				
-				<div class="image-text-container left-align image-spacing">
-					<img class="left-image" src="/aquilino.jpeg" alt="Aquilino" />
-					<p>También tenemos un chico muy atractivo, pero no está a la venta</p>
-				</div>
-			</div>
-		</main>
-		<Footer />
-	</body>
-</html>
+		<div class="image-text-container left-align image-spacing">
+			<img class="left-image shadow-bottom" src="/aquilino.jpeg" alt="Aquilino" />
+			<p>También tenemos un chico muy atractivo, pero no está a la venta</p>
+		</div>
+	</div>
+</BaseLayout>
+<style>
+	.offer-list {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		padding: 20px;
+	}
+</style>

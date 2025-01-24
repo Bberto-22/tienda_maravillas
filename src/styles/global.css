@@ -69,6 +69,8 @@ h1 {
     font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive; 
     font-weight: 700;
     text-transform: capitalize;
+	text-align: center;
+	margin: 0;
 }
 h2 {
 	font-size: 2.441em;
@@ -210,4 +212,9 @@ hr {
 /* Espaciado para evitar imágenes pegadas entre sí */
 .image-spacing {
     margin-bottom: 120px;
+}
+
+.shadow-bottom {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8); /* Sombra solo en la parte inferior */
+    border-radius: 8px; /* Opcional: bordes redondeados */
 }
